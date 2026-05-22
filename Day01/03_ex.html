@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+            <meta charset="utf-8">
+            <title>
+                03 ex
+            </title>
+
+
+
+
+    </head>
+    <body>
+        <!-- 1. 리스트 -->
+        <p>리스트의 종류</p>
+
+        
+        <ul>
+            <li>aaa</li>
+            <li>bbb</li>
+            <li>ccc</li>
+        </ul>
+
+        <ol>
+            <li>aaa</li>
+            <li>bbb</li>
+            <li>ccc</li>
+        </ol>
+
+        <dl>
+            <dt>aaa</dt>
+            <dd>aaa는 aaa입니다</dd>
+            <br>
+            <dt>bbb</dt>
+            <dd>bbb는 bbb입니다</dd>
+            <br>
+            <dt>ccc</dt>
+            <dd>ccc는 ccc입니다</dd>
+        </dl>
+
+        <hr>
+        <!-- 2. 하이퍼링크 anchor 요소 (인라인 요소 - 공간이 있다면 옆으로 배치) -->
+
+        <!-- 1) 절대경로 -->
+        <a href="https://www.naver.com">네이버</a>
+        <br>
+        <a href="https://www.google.com" target="_blank">구글</a>
+        <br>
+
+        <!-- 2) 상대경로 지정으로 파일 링크 가능 -->
+        <a href="./01_ex.html" target="_self">01 실습 웹문서 열기</a>
+        <br>
+
+        <!-- 3) 현재 html 문서 안에서 특정 위치로 이동 [id 속성 사용] -->
+        <a href="#help">도움말 위치로 이동</a>
+        <hr>
+        <h3 id= 'help'>도움말</h3>\
+
+        <!-- 매번 줄바꾸기 위해서 br 태그 사용하기보다는 (간격도 없음..) 단락요소로 줄바꾸는 게 보기 좊음
+          -->
+
+        <p><a href="">aaa</a></p>
+        <p><a href="">bbb</a></p>
+
+        <!-- 리스트의 요소로 링크들을 배치할 수 있음 -->
+        <ul>
+            <li><a href="">네이버</a></li>
+            <li><a href="">다음</a></li>
+            <li><a href="">구글</a></li>
+
+        </ul>
+
+        <!-- href에 .html 문서 외에도 링크를 연결할 수 있음 -->
+        <p><a href="http://mbca2025aix.dothome.co.kr/download/moana.jpg">이미지 링크</a></p>
+
+        <!-- 브라우저가 보여주지 못하는 문서를 링크하면?? 자동 다운로드됨! -->
+        <p><a href="http://mbca2025aix.dothome.co.kr/download/Fonts.zip">압축문서 다운로드</a></p>
+        <p><a href="http://mbca2025aix.dothome.co.kr/download/공모전hwp">한글문서 다운로드</a></p>
+
+
+        <!-- 이메일 주소를 링크하면.. 이메일 앱이 실해됨-->
+
+        <p><a href="mailto:aaaa@gmail.com">aaaaa@gmail.com</a></p>
+
+        <hr>
+
+        <!-- 3. 이미지를 보여주는 요소 -->
+
+        <img src="http://mbca2025aix.dothome.co.kr/download/moana.jpg" alt="모아나">
+        <br>
+        <img src="./image/ms19.png" alt="상대경로 이미지" width="200" height="180" border="2">
+        <img src="./image/ms20.png" alt="파일 이미지" width="50%">
+        <img src="aaa.jpg" alt="이미지 없을 때 보여질 대체 글씨">
+        
+        <!-- img + anchor -->
+         <a href="./image/ms21.png"><img src="./image/ms21.png" alt="메이플" width="200"></a>
+
+    </body>
+
+
+        <!-- 수행과제 -->
+        <!-- [슬라이드 자료 chapter2 32, 33] 커피전문점 예제 만들기 .html 1개 문서 --> 
+        <!-- [슬라이드 자료 chapter2 34, 37] 썸네일 사진 링크 페이지 .html 3개 문서 --> 
+        <!-- doit 책 교재 chapter 1~4.2 읽기 (~p.91) [ 단, 3-4챕터_시멘틱태그 는 건너뛰자 ] -->
+        <!-- 챕터 별 되새김 문제 풀기 [단, 챕터 3 중 3, 4, 7번 / 챕터 4 6, 8, 9, 11번 제외] -->
+</html>
