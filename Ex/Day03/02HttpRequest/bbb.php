@@ -2,7 +2,7 @@
 
 
     // 응답하는 데이터의 형식을 지정. 한글 깨짐 방지
-    header("Content-Type:text/html; charset=utf=8");
+    header("Content-Type:text/html; charset=utf-8");
 
     // 사용자가 POST방식으로 보낸 데이터는 $_POST라는 특별한 배열변수에 저장되어 있음
     // 이 배열변수에서 원하는 값들을 추출
