@@ -9,7 +9,8 @@
 
         <!-- 파일을 전송할 때는 key=value 방식이 아니라 다른 방식으로 보내야 함 -->
         <!-- 그래서... -->
-        <form action="./bbb.php" method="post" enctype="multipart/form-data">
+        <form action="./bbb.php" method="post" enctype="multipart/form-data"> 
+            <!-- 인코딩 타입을 '멀티파트' 로! -->
             <!-- 파일을 선택할 수 있는 요소 -->
             <input type="file" name="img1"> <br>
             <input type="submit" value="파일 전송">

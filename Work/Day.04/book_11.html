@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>book ticket</title>
+</head>
+<body>
+    <form action="./result2.php" method="post">
+        <fieldset>
+            <legend><h1>예약 정보</h1></legend>
+
+            <table>
+                <tr>
+                    <td><label for="name">이름</label></td>
+                    <td><input type="text" id="name" name="name" autofocus required></td>
+                </tr>
+
+                <tr>
+                    <td><label for="tel">전화</label></td>
+                    <td><input type="tel" id="tel" name="tel" required></td>
+                </tr>
+
+                <tr>
+                    <td><label for="email">이메일</label></td>
+                    <td><input type="email" id="email" name="email" required></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="예약하기"></td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+   
+    <form action="./internet2.php" method="get">
+        <h2>회원 목록 확인하기</h2>
+        <input type="submit" value="회원 목록">
+
+    </form>
+
+</body>
+</html>
