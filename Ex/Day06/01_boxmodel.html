@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>box model</title>
+        <!-- 내부 스타일시트 -->
+        <style>
+
+            p.aaa{
+                /* 경계선 스타일 지정 (두께는 기본값으로 부여. ~=3px) */
+                border-style: solid;
+
+                /* top, right, bottom, left 로 나누어 스타일 지정 가능 */
+                border-top-style: dotted;
+
+                /* 경계선 두께 */
+                border-width: 3px;
+                border-bottom-width: 8px;
+
+                /* 경계선 색상 */
+                border-color: red;
+                border-right-color: blue;
+
+                /* 경계선 모서리 라운드.. 둥글게 */
+                border-radius: 20px;
+                border-bottom-left-radius: 0px;
+                border-top-right-radius: 0px;
+
+                /* 경계선 축약.. [size style color] */
+                border: 30px solid #00000000; /* RGBA_ RGB 외에도 뒤에 두 자를 알파값이라 함. 투명도 부여 */
+                border: 30px solid transparent; /* RGB로 입력하기 애매하다면? transparent = 투명하게 */
+
+                /* 경계선을 이미지 파일로 그려내기 (사실 많이 쓰지는 않음) */
+                border-image-source: url(./image/border.png) ;
+                border-image-slice: 30 30; /* 높이, 너비 (9조각으로 자를 때 1조각의 크기) */
+                border-image-repeat: round;
+
+                /* 요소 크기 */
+                width: 70%;
+                height: 300px;
+
+                /* 요소 밖 여백 지정 (마진/margin) */
+                margin-left: 15%;
+
+                /* 가운데 배치 하려면.. 자동 마진을 활용 */
+                margin-left: auto;
+                margin-right: auto;
+
+            }
+
+            /* 인라인 요소는 width, height 속성이 적용되지 않음 */
+            a{background-color: red; width: 200px;}
+            em{background-color: aqua; width: 100%;}
+
+            /* 인라인 요소 중에서 인라인-블럭 요소는 크기 조정 가능함 */
+            img{width: 400px; border: 1px solid black;}
+            input{width: 100%; background-color: aquamarine;}
+
+            /* block 요소만 마진 auto가 가능함 */
+            strong{margin-left: 50px;} /* 적용됨 */
+            strong{margin-left: auto;} /* 적용 X. 이전 효과도 아예 초기화됨 */
+
+            /* inline-block 요소 조차도 마진 auto는 안됨 */
+            img{margin: auto;}
+
+            /* 요소의 성질을 바꾸면 block처럼 사용 가능하다 */
+            strong{display: block; background-color: bisque; width: 200px; margin-left: auto;}
+
+        </style>
+
+        <!-- 또 다른 내부 스타일 시트 -->
+        <style>
+            /* margin 은 겹칠 수 있음 */
+            #p1{background-color: red; height: 50px; margin: 0px; margin-bottom: 10px;}
+            #p2{background-color: blue; height: 50px; margin: 0px; margin-top: 10px}
+
+            /* 음수 margin 도 존재함.. 요소가 겹쳐질 수 있음 */
+            #p1{background-color: red; height: 50px; margin: 0px;}
+            #p2{background-color: blue; height: 50px; margin: 0px; width: 50%; margin-top: -20px;}
+
+        </style>
+
+    </head>
+    <body>
+        
+        <h2>박스 모델(액자 크기 및 배경과 경계선)</h2>
+
+        <!-- 1. 경계선 border / 요소 크기 / 수평 중앙 정렬 -->
+        <p class="aaa">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus culpa aliquam sint aut, sit soluta distinctio eveniet fugiat excepturi voluptate nisi iure hic ullam corrupti velit voluptatibus amet, natus ipsam?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla maxime eum quo! Magnam molestiae distinctio inventore ratione, reiciendis temporibus dolor corporis culpa dolore? Iure tempore iste maxime voluptates ipsam eaque.
+        </p>
+
+        <!-- 요소 크기는 블럭 요소만 적용 가능함 -->
+
+        <!-- 인라인요소 -->
+        <a href="">네이버</a>
+        <em>Hello css</em>
+
+        <!-- 인라인요소 중에서 크기 지정이 가능한 요소도 존재함 -->
+        <!-- 인라인-블록 요소 -->
+        <img src="./image/image.png" alt="이미지이">
+        <input type="text">
+
+        <!-- 마진 auto는 block 요소만 적용됨 -->
+        <strong>WEB</strong>
+
+        <hr>
+
+        <!-- 마진에 대한 추가 실습 -->
+        <div id="bbb">
+            <p id="p1">p#1</p>
+            <p id="p2">p#2</p>
+        </div>
+
+        <hr>
+
+        <!-- 배경 -->
+
+        <p class="ccc">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio nihil accusamus autem, quisquam expedita ea? Dolore ipsum ipsa non. Quod veritatis quae, excepturi dolorum omnis quo culpa quis id atque.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro totam in ea! Facere voluptate sequi officia iure et, deserunt, voluptates nemo magni blanditiis inventore tempore accusantium rerum delectus quae voluptas?
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. In totam dolores a temporibus perspiciatis autem incidunt atque nemo, natus voluptates officia corporis, ipsam deleniti magni animi minima ducimus nulla harum.
+        </p>
+
+        <!-- 내부 스크립트 -->
+        <style>
+            p.ccc{
+                background-color: green;
+                background-image: url('./image/image.png');
+                background-size: 150px 80px;
+
+                background-repeat: repeat; /* default */
+                background-repeat: repeat-x;
+                background-repeat: no-repeat;
+
+                background-position: center;
+                background-position: right center;
+                background-position: top center;
+
+                /* 축약형_쓰는 순서(필요에 따라) [color, image, repeat, position] */
+
+                background: greenyellow url('./image/image.png') no-repeat center;
+
+                margin: 20px 10px;
+                padding: 30px 20px 20px 30px; /* top right bottom left 순서 */
+            }
+
+        </style>
+
+        <hr>
+
+        <!-- background-attachment -->
+         <p class="ddd">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque repellendus voluptas, voluptatibus asperiores fugit atque officia dolorem suscipit officiis illo praesentium fugiat odit iusto? Veritatis animi itaque culpa ipsa aut.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, beatae numquam. Rerum nihil sequi in consequatur ex sit odit id numquam, quae magni quod ipsam! Hic nam qui alias tempore?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deserunt, expedita cumque distinctio vel harum minus dignissimos esse quo ut corporis reprehenderit voluptatum earum aperiam, nulla, corrupti beatae minima reiciendis?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa reprehenderit consequatur voluptate quaerat. Exercitationem, ullam recusandae unde quasi expedita quam dolor veritatis est quidem ipsa obcaecati omnis architecto illum temporibus.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, vitae ad! Natus reiciendis voluptas quod officia ipsam quae fugiat sit quos assumenda corrupti, tempore voluptates facere cupiditate, omnis a doloribus!
+         </p>
+
+         <style>
+            p.ddd{
+                width: 60%;
+                height: 300px;
+                border: 2px solid blue;
+                overflow: scroll;
+
+                margin-right: auto;
+                margin-left: auto;
+
+                background-image: url('./image/image.png');
+                background-repeat: no-repeat;
+                background-size: 150px 80px;
+                background-position: center;
+
+                background-attachment: scroll; /* default : 요소에 붙어 있는 배경 */
+                background-attachment: local;  /* 콘텐츠에 붙어 있는 배경 */
+                background-attachment: fixed;  /* 브라우저 스크롤 기준 ~ 요소의 배경이기에 p 요소 밖에서는 보이지 않음*/    
+                }
+
+         </style>
+
+    </body>
+
+</html>
