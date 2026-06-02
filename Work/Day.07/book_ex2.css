@@ -1,0 +1,10 @@
+*{margin: 0px; padding: 0px;}
+ul{list-style: none;}
+a{text-decoration: none;}
+
+body{
+    background-image: url(../Day.06/image/lion.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100% ;
+}

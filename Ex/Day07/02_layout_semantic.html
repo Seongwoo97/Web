@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>semantic tag</title>
+        <style>
+            #wrapper{
+                width: 680px;
+                margin-right: auto;
+                margin-left: auto;
+                border: 1px solid black;
+                padding: 10px;
+                background-color: bisque;
+            }
+
+            header{
+                background-color: aqua;
+                width: 100%;
+                padding: 3em;
+                box-sizing: border-box;
+
+            }
+
+            nav{
+                background-color: yellow;
+                width: 100%;
+                padding: 1em;
+                box-sizing: border-box;
+                text-align: center;
+            }
+
+            main{
+                background-color: pink;
+                padding: 1em;
+                display: table-cell;
+                box-sizing: border-box;
+                
+            }
+
+            aside{
+                background-color: brown;
+                padding: 1em;
+                display: table-cell;
+                box-sizing: border-box;
+
+            }
+
+            footer{
+                background-color: black;
+                color: white;
+                padding: 2em;
+                text-align: center;
+                box-sizing: border-box;
+
+            }
+
+            nav ul{
+                list-style: none;
+            }
+
+            nav ul li{
+                display: inline-block;
+            }
+
+            nav ul li a{
+                text-decoration: none;
+                color: blue;
+            }
+
+            nav ul li a:hover{
+                text-decoration: underline;
+                color: red;
+            }
+
+            main{
+                width: 70%;
+            }
+
+            aside{
+                width: 30%;
+            }
+
+            aside img{
+                width: 150px;
+            }
+
+        </style>
+
+    </head>
+    <body>
+        
+        <div id="wrapper">
+
+            <header>
+                <h1>MY HOME PAGE</h1>
+                <p>This si my semantic tag test page</p>
+
+
+            </header>
+
+            <nav>
+                <ul>
+                    <li><a href="">뉴스</a></li>
+                    <li><a href="">스포츠</a></li>
+                    <li><a href="">연예</a></li>
+
+
+                </ul>
+
+
+            </nav>
+
+            <main>
+                <section>
+                    <article>
+                        <h3>HTML5</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente minima voluptas culpa, facilis distinctio vero eius, eaque quo maxime perspiciatis, fugiat quisquam dolorem. Eos maxime libero beatae quod, at enim.</p>
+                    </article>
+                    <article>
+                        <h3>CSS3</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, ullam adipisci? Saepe atque soluta, magnam quibusdam ipsum voluptatum, harum rerum suscipit nostrum nobis voluptate, dicta ex velit. Reiciendis, placeat quaerat?</p>
+                    </article>
+
+                </section>
+
+
+            </main>
+
+            <aside>
+                <input type="text" placeholder="검색어를 입력하세요">
+
+                <figure>
+                    <img src="../Day06/image/paris.jpg" alt="paris" >
+                    <figcaption>파리의 전경</figcaption>
+
+                </figure>
+
+
+
+            </aside>
+
+
+            <footer>
+                <h5>COPYRIGHT &copy; MBCA</h5>
+
+            </footer>
+
+
+        </div>
+
+
+
+    </body>
+
+</html>
