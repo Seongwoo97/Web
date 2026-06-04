@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book ex</title>
+
+    <style>
+        *{box-sizing: border-box;}
+
+        body{
+            background-color: aliceblue;
+            height: 100vh;
+            margin-right: auto;
+            margin-left: auto;
+            text-align: center;
+        }
+
+        main{
+            display: grid;
+            grid-template-rows: auto auto auto;
+            row-gap: 2rem;
+        }
+
+        .card{
+            height: 400px;
+            background-color: white;
+            box-shadow: 2px 2px 5px rgb(134, 152, 168);
+            border-radius: 5px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+        }
+   
+
+
+        .icon{
+            width: 70%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+    
+        }
+
+        .face{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 5px solid plum;
+        }
+
+
+        .icon img{
+            width: 25px;
+        }
+
+        span{
+            display: block;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        p{
+            margin: 0;
+        }
+
+
+
+    </style>
+
+    <link rel="stylesheet" href="./book_ex.css" media="(min-width: 1000px)">
+    
+</head>
+<body>
+
+    <div id="wrap">
+
+        <header>
+            <h2>OUR TEAM</h2>
+
+        </header>
+
+        <main>
+            <div class="card">
+                    <img class="face" src="./source/face/face 1.jpg" alt="face 1">
+                    <span>James</span>
+                    <p>FOUNDER</p>
+                    <div class="icon">
+                        <img src="./source/icon/email.png" alt="email">
+                        <img src="./source/icon/twitter.png" alt="twiter">
+                        <img src="./source/icon/git.png" alt="git">
+                        <img src="./source/icon/python.png" alt="python">
+                    </div>
+
+            </div>
+            <div class="card">
+            
+                <img class="face" src="./source/face/face 2.png" alt="face 2">
+                <span>Luna</span>
+                <p>DEVELOPER</p>
+                <div class="icon">
+                    <img src="./source/icon/email.png" alt="email">
+                    <img src="./source/icon/twitter.png" alt="twiter">
+                    <img src="./source/icon/git.png" alt="git">
+                    <img src="./source/icon/python.png" alt="python">
+                </div>
+
+            </div>
+            <div class="card">
+                <img class="face" src="./source/face/face 3.jpg" alt="face 3">
+                <span>Hope</span>
+                <p>DESIGNER</p>
+                <div class="icon">
+                    <img src="./source/icon/email.png" alt="email">
+                    <img src="./source/icon/twitter.png" alt="twiter">
+                    <img src="./source/icon/git.png" alt="git">
+                    <img src="./source/icon/python.png" alt="python">
+                </div>
+            </div>
+
+
+        </main>
+
+
+    </div>
+    
+</body>
+</html>

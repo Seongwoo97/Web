@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cats</title>
+
+    <style>
+
+
+        body{
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        img{
+            width: 100%;
+            object-fit: cover;
+        }
+
+        @media screen and (min-width:768px){
+            img{
+                flex: 1 1 calc(50% - 10px);
+            }
+        }
+
+          @media screen and (min-width:1025px){
+            img{
+                flex: 1 1 calc(33.3% - 10px);
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <img src="./source/cats/20240515ceva_experts4.jpg" alt="cat1">
+    <img src="./source/cats/20260221500072.png" alt="cat2">
+    <img src="./source/cats/shutterstock_1844153299-1024x683-1.png" alt="cat3">
+    
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css function</title>
+</head>
+<body>
+    <!-- 1. css 변수를 사용하는 기능 : var() -->
+    <h1>Hello</h1>
+    <p>This is css</p>
+    <span>nice to meet you</span>
+    <style>
+        /* 요소의 색상을 지정할때.. 특정 색을 변수에 저장하고 사용하면 유지보수에 용이함 */
+        /* css 변수가 적용될 범위 */
+        :root{ /* 문서의 최상위 요소 선택. :root = <html> 자손 요소들은 모두 이 변수 사용 가능 */
+            /* css 변수 만들기 : 하이픈(-) 2개 */
+            --aa: blue;
+            --bb: red;
+            /* 변수 이름은 가급적 그 의미를 알 수 있는 명칭을 선택할 것 */
+            /* --main-color: / --main-bg-color: / --secondary-text-color: / --error-text-color: 등등 */
+            --main-bg-color: orange;  
+        }
+    
+        s
+        h1{color: var(--aa);}
+        p{color: var(--bb);}
+        span{color: var(--bb);}
+        body{background-color: var(--main-bg-color);}
+
+    </style>
+    <hr>
+    <!-- 2. calc() : 수치값을 적용할때 사칙연산 계산이 필요하다면? -->
+     <div>Hello</div>
+     <style>
+        div{
+            border: 2px solid blue;
+            /* width: 100% - 3rem; /* 적용 안 됨 */
+            padding: 0 3rem;
+            width: calc(100% - 10rem); /* 연산자와 숫자 사이에 띄어쓰기가 있어야 함 */
+
+        }
+    </style>
+    <hr>
+
+     <!-- 3. max(), min() : 여러 값 중에서 최대 또는 최소값이 적용되는 기능함수(function) -->
+    <h4>THIS IS HEADING</h4>
+
+    <style>
+        h4{
+            border: 3px solid black;
+            width: min(100%, 600px); /* 둘 중에 작은 값이 적용 */
+        }
+    </style>
+
+    <!-- 4. filter 속성 -->
+     <div>
+        <p><img src="../Day06/image/paris.jpg" alt="paris"></p>
+        <hr>
+
+        <p>
+            <img style="filter: blur(3px);" src="../Day06/image/paris.jpg" alt="paris">
+            <img style="filter: brightness(2);" src="../Day06/image/paris.jpg" alt="paris">
+            <img style="filter: contrast(200%);" src="../Day06/image/paris.jpg" alt="paris">
+            <img style="filter: drop-shadow(8px 8px 5px black);" src="../Day06/image/paris.jpg" alt="paris">
+            <img style="filter: grayscale(100%);" src="../Day06/image/paris.jpg" alt="paris">
+            <img style="filter: invert(100%);" src="../Day06/image/paris.jpg" alt="paris">
+            <img style="filter: opacity(50%);" src="../Day06/image/paris.jpg" alt="paris">
+            <img style="filter: sepia(100%);" src="../Day06/image/paris.jpg" alt="paris">
+            <img style="filter: hue-rotate(90deg);" src="../Day06/image/paris.jpg" alt="paris">
+            <img style="filter: saturate(200%);" src="../Day06/image/paris.jpg" alt="paris">
+        </p>
+     </div>
+
+     <style>
+        img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin:1rem
+        }
+
+
+     </style>
+
+</body>
+</html>
+
+<!-- 수행과제 -->
+<!-- 1. 11, 12, 13 챕터 읽고 예제 따라하기 -->
+<!-- 2. 되새김 문제 풀기 -->
+<!-- 3. wwit design 사이트의 모바일 UI를 flex 와 grid 스타일로 만들어보기 -->
