@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control</title>
+    <!-- 내부 스크립트 사용 -->
+
+    <script>
+        // 제어문 [ 조건문(if, switch), 반복문(while, for) ]
+
+        // 1. if 문
+        var age= 15;
+        if(age<20){
+            document.write("미성년자입니다. 시청 지도가 필요합니다")
+        }
+        document.write("<br>");
+
+        // 짝수인지 홀수인지?
+        var num = 20;
+        if(num%2 == 0){
+            document.write('even number');
+        }else{
+            document.write('odd number');
+        }
+        document.write("<br>");
+
+        // 점수에 따른 학점 출력
+
+        var score= 75;
+        if(score>=90){
+            document.write("A <br>");
+            document.write("very good <br>")
+        }else if(score >= 80){
+            document.write("B <br>")
+            document.write("good <br>")
+        }else if(score >= 70){
+            document.write("C <br>")
+            document.write("so so <br>")
+        }else if(score >= 60){
+            document.write("D <br>")
+            document.write("not good <br>")
+        }else{
+            document.write("F <br>")
+            document.write("bad <br>")
+        }
+
+        document.write("<hr>");
+
+
+        // 2. switch 문 [파이썬에도 이와 유사한 문법 match-case]
+        //  if 조건의 == 비교를 조금 더 가독성 좋게 해 주는 [분기문]이라고 부름!
+        var menu=5;
+        switch(menu){
+            case 1:
+                document.write('walking')
+                break
+            case 2:
+                document.write('running')
+                break
+            case 3:
+                document.write('rest')
+                break
+            default:
+                document.write('wrong menu')
+        }
+
+        document.write("<hr>");
+
+
+        // --------------------------------------------------------------------------------------
+        
+        // 3. while 문
+        var n=0;
+        while(n<6){
+            document.write("Hello<br>");
+            // n = n+1;
+            // n += 1;
+            n++;
+        }
+
+        // 무한반복문을 통해 특정 입력이 될때까지 반복하기
+        // while(true){
+        //     var name=prompt('당신의 이름을 입력하세요.');
+        //     if(name=='exit' || name== '' || name=='null'){ // 사용자가 입력 없이 [확인] 누르면 '', [취소] 누르면 'null' 입력됨.
+        //         break
+        //     }
+        //     document.write(name+"<br>");
+        // }
+
+        
+
+        // 4. for 문 [파이썬과 문법차이가 다소 있음]
+        var dan=3
+        for(var n=1; n<10; n++){
+            document.write( dan + " x " + n +" = " + (dan*n) + "<br>")
+        }
+        document.write("<hr>");
+
+        //  for 문 사용할 때 문법 위치를 조정할 수 있음. (권장하진 않음.. 대신 읽을 수만 있으면 됨)
+        var m=0;
+        for(; m<5;){ //이런 식으로 해체해도 되지만 세미콜론(;)은 무조건 자리에 위치해야 한다
+            document.write("nice to meet you!<br>");
+            m++
+        }
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <hr>
+
+    <!-- html 요소태그와 script문이 혼재되어 사용되는 경우도 있음. -->
+    <table border="1" style="text-align: center;">
+        <tr>
+            <th>번호</th>
+        </tr>
+        
+
+        <script>
+            for(var n=1; n<21; n++){
+                // 결합 연산자 + 이용
+                // document.write("<tr><td>" + n + "</td></tr>")
+                // 파이썬의 f-string 처럼. 백틱(`) 이용한 템플릿 기법
+                document.write(`<tr><td>${n}</td></tr>`)
+            }
+
+        </script>
+
+    </table>
+
+    <hr>
+
+    <script>
+        // 반복문을 제어하는 기타 제어문 : break(전체를 멈춰버림), continue(지정한 부분만 제외하고 나머지 다 작동함)
+        for(var n=0; n<10; n++){
+            if(n==5){
+                continue;
+            }
+            document.write(n+'<br>');
+        }
+
+    </script>
+    
+</body>
+</html>
+
+<!-- do it 책 15 ~ 16챕터 완료 -->
+<!-- 수행과제 -->
+<!-- 책 읽고 예제 따라해보기 -->
+<!-- 챕터 별 되새김 문제 풀기 -->
+
+<!-- (추가) 시간 남으면 wwit ui 연습 -->
