@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            list-style-type: square;
+            list-style-type: none;
         }
 
         #container{
@@ -32,6 +32,9 @@
 
         .agree-box{
             border: 1px solid #d6dce5;
+            /* width: 500px;
+            margin-left: auto;
+            margin-right: auto; */
             border-radius: 8px;
             overflow: hidden;
             margin: 20px 16px;
@@ -83,6 +86,44 @@
             background: none;
             color: #9aa1ad;
             font-size: 12px;
+        }
+
+        #input_yours{
+            border: 1px solid #d6dce5 ;
+            border-radius: 8px;
+            /* padding: 20px; */
+            overflow: hidden;
+            text-align: left;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 20px 16px;
+        }
+
+        #name_board{
+            border-bottom: 1px solid #d6dce5 ;
+            height: 50px;
+        }
+
+        #name_board input{
+            
+            border: none;
+            height: 30px;
+            padding: 5px 0px;
+            width: 100%;
+        }
+
+        #birth_board{
+            height: 50px;
+            
+        }
+
+        #birth{
+            border: none;
+            height: 40px;
+            padding: 5px 0px;
+            width: 60%;
         }
     
 
@@ -142,15 +183,32 @@
         </main>
 
         <div id="input_yours">
-            <div>
+
+            <div id="name_board">
                 <input type="text" placeholder="이름">
             </div>
-            <div>
-                <input type="number" placeholder="생년월일 8자리">
+
+            <div id="birth_board">
+                <input id="birth" type="number" placeholder="생년월일 8자리">
                 <label><input type="radio" name="gender">남자</label>
                 <label><input type="radio" name="gender">여자</label>
             </div>
 
+            <div id="telecom_board">
+                <span>통신사 선택</span>
+                <select name="telecome" id="telecom">
+                    <option value="skt">skt</option>
+                    <option value="kt">kt</option>
+                    <option value="U+">U+</option>
+                </select>
+                <label><input type="radio" name="gender">내국인</label>
+                <label><input type="radio" name="gender">외국인</label>
+            </div>
+
+            <div id="phone_num_board">
+                <input type="number" placeholder="전화번호">
+                <button>확인</button>
+            </div>
 
 
         </div>
