@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>plus or </title>
+
+    <script>
+
+        let sum=0;
+
+        function sumMulti(x, y){
+            if(x === y){
+                sum= x * y;
+                console.log(sum)
+            }else{
+                sum = x + y
+                console.log(sum)
+            }
+            
+        }
+
+        let userNumber1 = parseInt(prompt("첫 번째 정수를 입력하세요"))
+        let userNumber2 = parseInt(prompt("두 번째 정수를 입력하세요"))
+        if (userNumber1 && userNumber2 !== null){
+            sumMulti(userNumber1, userNumber2)
+        }
+
+
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

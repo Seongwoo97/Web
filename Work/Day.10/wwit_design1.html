@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>naver pay</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            list-style-type: square;
+        }
+
+        #container{
+            width: 40%;
+            height: 100vh;
+            margin-left: auto;
+            margin-right: auto;
+            /* background-color: aquamarine; */
+        }
+
+        header{
+            display: flex;
+        }
+
+        header img{
+            justify-items: flex-start;
+            padding: 5px;
+        }
+
+        .agree-box{
+            border: 1px solid #d6dce5;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 20px 16px;
+            text-align: left;
+        }
+
+        .agree-title{
+            height: 56px;
+            padding: 0px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #d6dce5;
+        }
+
+        .agree-title label{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .agree-title strong{
+            color: #00c773;
+        }
+
+        .agree-list{
+            list-style: none;
+            margin: 0;
+            padding: 10px 16px 14px;
+        }
+
+        .agree-list li{
+            height: 34px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            padding-left: 20px;
+        }
+
+        .agree-list label{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .agree-list button{
+            border: none;
+            background: none;
+            color: #9aa1ad;
+            font-size: 12px;
+        }
+    
+
+    </style>
+
+</head>
+<body>
+
+    <div id="container">
+
+        <header>
+            <img src="./image/logo.png" alt="logo">
+
+
+
+        </header>
+
+        <main>
+            <div id="text_main">
+                <h3>본인확인을 위한<br>휴대전화 인증이 필요합니다</h3>
+            </div>
+
+        <div class="agree-box">
+            <div class="agree-title">
+                <label>
+                    <input type="checkbox">
+                    <strong>(필수) 약관 전체동의</strong>
+                </label>
+                <span>⌃</span>
+            </div>
+
+            <ul class="agree-list">
+                <li>
+                    <label><input type="checkbox"> 인증시 개인정보 이용</label>
+                    <button>전체 ></button>
+                </li>
+                <li>
+                    <label><input type="checkbox"> 인증시 고유식별정보 처리</label>
+                    <button>전체 ></button>
+                </li>
+                <li>
+                    <label><input type="checkbox"> 통신사 이용약관</label>
+                    <button>전체 ></button>
+                </li>
+                <li>
+                    <label><input type="checkbox"> 인증사 이용약관</label>
+                    <button>전체 ></button>
+                </li>
+                <li>
+                    <label><input type="checkbox"> 네이버파이낸셜 개인정보 수집</label>
+                    <button>전체 ></button>
+                </li>
+            </ul>
+        </div>
+
+
+        </main>
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    
+</body>
+</html>
