@@ -32,7 +32,7 @@ function moveToMyLocation(lat, lng){
 
         var options = {
             center: position,
-            level: 3
+            level: 2
         };
 
         map = new kakao.maps.Map(container, options);
