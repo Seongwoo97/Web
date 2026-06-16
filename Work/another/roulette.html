@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>오늘 뭐 먹지?</title>
+
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        .container{
+            text-align: center;
+        }
+
+        h1{
+            margin-bottom: 30px;
+        }
+
+        .roulette-wrap{
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        .pointer{
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 18px solid transparent;
+            border-right: 18px solid transparent;
+            border-top: 35px solid red;
+            z-index: 10;
+        }
+
+        .roulette{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 8px solid #222;
+            position: relative;
+            overflow: hidden;
+            transition: transform 4s ease-out;
+            background: conic-gradient(
+                #ffadad 0deg 40deg,
+                #ffd6a5 40deg 80deg,
+                #fdffb6 80deg 120deg,
+                #caffbf 120deg 160deg,
+                #9bf6ff 160deg 200deg,
+                #a0c4ff 200deg 240deg,
+                #bdb2ff 240deg 280deg,
+                #ffc6ff 280deg 320deg,
+                #d0f4de 320deg 360deg
+            );
+        }
+
+        .item{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform-origin: 0 0;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .item span{
+            display: inline-block;
+            transform: translate(35px, -50%);
+            white-space: nowrap;
+        }
+
+        button{
+            margin-top: 35px;
+            padding: 14px 32px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            background-color: #222;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: #444;
+        }
+
+        #result{
+            margin-top: 25px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>오늘 뭐 먹지?</h1>
+
+        <div class="roulette-wrap">
+            <div class="pointer"></div>
+
+            <div class="roulette" id="roulette">
+                <div class="item" style="transform: rotate(20deg);"><span>마라탕</span></div>
+                <div class="item" style="transform: rotate(60deg);"><span>햄부기</span></div>
+                <div class="item" style="transform: rotate(100deg);"><span>냉모밀</span></div>
+                <div class="item" style="transform: rotate(140deg);"><span>돈까스</span></div>
+                <div class="item" style="transform: rotate(180deg);"><span>냉맨</span></div>
+                <div class="item" style="transform: rotate(220deg);"><span>스테키덮밥</span></div>
+                <div class="item" style="transform: rotate(260deg);"><span>제육</span></div>
+                <div class="item" style="transform: rotate(300deg);"><span>국밥</span></div>
+                <div class="item" style="transform: rotate(340deg);"><span>마늘 한알</span></div>
+            </div>
+        </div>
+
+        <button onclick="spin()">돌리기</button>
+
+        <div id="result">결과는?</div>
+    </div>
+
+    <script>
+        const foods = [
+            "마라탕",
+            "햄부기",
+            "냉모밀",
+            "돈까스",
+            "냉맨",
+            "스테키덮밥",
+            "제육",
+            "국밥",
+            "마늘 한알"
+        ];
+
+        const roulette = document.getElementById("roulette");
+        const result = document.getElementById("result");
+
+        let currentRotation = 0;
+        let isSpinning = false;
+
+        function spin(){
+            if(isSpinning) return;
+
+            isSpinning = true;
+            result.textContent = "돌리는 중...";
+
+            const randomIndex = Math.floor(Math.random() * foods.length);
+
+            const anglePerItem = 360 / foods.length;
+
+            // 선택된 항목이 위쪽 포인터에 오도록 계산
+            const targetAngle = 360 - (randomIndex * anglePerItem + anglePerItem / 2);
+
+            // 여러 바퀴 돌게 하기
+            const extraSpin = 360 * 5;
+
+            currentRotation += extraSpin + targetAngle;
+
+            roulette.style.transform = `rotate(${currentRotation}deg)`;
+
+            setTimeout(function(){
+                result.textContent = "오늘의 메뉴: " + foods[randomIndex];
+                isSpinning = false;
+            }, 4000);
+        }
+    </script>
+
+</body>
+</html>
