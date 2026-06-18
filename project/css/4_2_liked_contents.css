@@ -1,0 +1,48 @@
+#wrap{
+    width: 800px;
+    min-height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    /* background-color: #FEF9F4; */
+}
+
+header{
+    display: grid;
+    grid-template-columns: 70px 1fr 70px;
+    align-items: center;
+    padding: 20px 30px;
+}
+
+#back_btn{
+    justify-self: start;
+    border: none;
+    background: none;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+#logo{
+    justify-self: center;
+    width: 6.5rem;
+    height: 2.5rem;
+}
+
+#profile_btn{
+    justify-self: end;
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    overflow: hidden;
+    background: none;
+    cursor: pointer;
+}
+
+#profile_btn img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

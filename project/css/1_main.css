@@ -10,10 +10,17 @@
 
 header{
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 20px 30px;
     border-bottom: 3px solid #ddddddb9 ;
+}
+
+#back_btn{
+    border: none;
+    background: none;
+    font-size: 40px;
+    cursor: pointer;
 }
 
 #logo{
@@ -117,6 +124,11 @@ main{
     border-radius: 25px;
     box-shadow: 3px 3px 3px #888888d4;
     margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.top .food:hover{
+    padding: 5px;
 }
 
 .top p{
@@ -175,6 +187,11 @@ main{
     border-radius: 25px;
     box-shadow: 3px 3px 3px #888888d4;
     margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.content .food:hover{
+    padding: 5px;
 }
 
 .content>p{
@@ -210,6 +227,10 @@ nav button{
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
+}
+
+nav button:hover{
+    transform: scale(1.05);
 }
 
 nav #upload{
