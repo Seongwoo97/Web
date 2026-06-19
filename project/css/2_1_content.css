@@ -213,3 +213,23 @@ h2{
     padding: 10px 20px;
     cursor:pointer;
 }
+
+#like_btn{
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+#like_btn img{
+    width: 30px;
+    height: 30px;
+}
+
+.comment_delete_btn{
+    border: none;
+    background: none;
+    color: #999999;
+    cursor: pointer;
+    font-size: .85rem;
+}

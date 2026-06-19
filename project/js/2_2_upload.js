@@ -1,117 +1,112 @@
 console.log(window.kakao);
 
-var img1= document.getElementById('profile_select')
-var in1= document.getElementById('in1')
+// 이미지 업로드 미리보기
+var img1 = document.getElementById('profile_select');
+var in1 = document.getElementById('in1');
 
-// 이미지 요소 클릭 이벤트 처리
-        img1.addEventListener('click', function(){
-            in1.click(); //숨겨져있던 input 요소를 강제로 클릭!
-        });
+img1.addEventListener('click', function(){
+    in1.click();
+});
 
-        // 파일 탐색기의 이미지 선택이 완료되면..
-        in1.addEventListener('change', function(){
-            // 선택한 파일 객체 취득
-            var file= in1.files[0]; //여러개 선택할 수 있어서 배열임. 그래서 첫번째
+in1.addEventListener('change', function(){
+    var file = in1.files[0];
 
-            if(file){
-                var fr= new FileReader();
-                fr.onload=function(){
-                    img1.src= fr.result;
-                }
-                fr.readAsDataURL(file);
-            }
-        })
+    if(file){
+        var fr = new FileReader();
 
-        //         // 전송 버튼 클릭 이벤트 처리
-        // btn1.addEventListener('click', function(){
+        fr.onload = function(){
+            img1.src = fr.result;
+        };
 
-        //     // 선택한 파일 정보 받기
-        //     var file= in1.files[0];
-
-        //     // 파일이 없으면 전송하지 않도록
-        //     if(file){
-        //         // 파일과 문자열 데이터를 서버로 동시에 전달하려면.. 특별한 택배상자가 필요하다
-        //         var formData= new FormData();
-        //         formData.append('img', file) // 택배상자에 파일 넣기            - 식별자와 파일
-        //         formData.append('nickname', in2.value) // 문자열도 다르지 않음  - 식별자와 값
+        fr.readAsDataURL(file);
+    }
+});
 
 
-        //         // 닉네임 + 프로필사진을 서버로 전송 (ajax)
-        //         fetch('./profileUpload.php', {
-        //             method: 'POST',
-        //             body:formData
-        //         })
-        //         .then(function(res){return res.text()})
-        //         .then(function(text){alert(text)})
-
-        //     }else{
-        //         alert('사진 변경이 없어서 전송 안 함!')
-        //     }
-
-        // })
-
-
+// 카카오 지도 생성
 var mapContainer = document.getElementById('map');
 
 var mapOption = {
-    center: new kakao.maps.LatLng(
-        37.566826,
-        126.9786567
-    ),
+    center: new kakao.maps.LatLng(37.566826, 126.9786567),
     level: 3
 };
 
-var map = new kakao.maps.Map(
-    mapContainer,
-    mapOption
-);
+var map = new kakao.maps.Map(mapContainer, mapOption);
 
 var ps = new kakao.maps.services.Places();
 
-document
-.getElementById('search_btn')
-.addEventListener('click', searchRestaurant);
+var marker = null;
+
+
+// 식당 검색
+var searchBox = document.getElementById('search_bar');
+var searchBtn = document.getElementById('search_btn');
+var searchResult = document.getElementById('search_result');
+var restaurantNameInput = document.getElementById('restaurant_name');
+
+searchBtn.addEventListener('click', function(){
+    searchRestaurant();
+});
 
 function searchRestaurant(){
 
-    let keyword =
-    document.getElementById('restaurant_name').value;
+    var keyword = restaurantNameInput.value;
 
-    ps.keywordSearch(
-        keyword,
-        placesSearchCB
-    );
-
-}
-
-function placesSearchCB(
-    data,
-    status
-){
-
-    if(
-        status ===
-        kakao.maps.services.Status.OK
-    ){
-
-        let place = data[0];
-
-        let moveLatLon =
-        new kakao.maps.LatLng(
-            place.y,
-            place.x
-        );
-
-        map.setCenter(moveLatLon);
-
-        let marker =
-        new kakao.maps.Marker({
-            map: map,
-            position: moveLatLon
-        });
-
+    if(keyword.trim() === ''){
+        alert('식당명을 입력하세요.');
+        return;
     }
 
+    ps.keywordSearch(keyword, placesSearchCB);
 }
 
+function placesSearchCB(data, status){
 
+    searchResult.innerHTML = '';
+
+    if(status === kakao.maps.services.Status.OK){
+
+        searchBox.classList.add('active');
+
+        data.forEach(function(place){
+
+            var li = document.createElement('li');
+
+            li.innerHTML = `
+                <strong>${place.place_name}</strong><br>
+                <span>${place.road_address_name || place.address_name}</span>
+            `;
+
+            li.addEventListener('click', function(){
+
+                 var moveLatLon = new kakao.maps.LatLng(place.y, place.x);
+
+                map.setCenter(moveLatLon);
+
+                if(marker){
+                     marker.setMap(null);
+                }
+
+                marker = new kakao.maps.Marker({
+                    map: map,
+                    position: moveLatLon
+                });
+
+                restaurantNameInput.value = place.place_name;
+
+                document.getElementById('lat').value = place.y;
+                document.getElementById('lng').value = place.x;
+                document.getElementById('address').value =
+                    place.road_address_name || place.address_name;
+
+                searchBox.classList.remove('active');
+            });
+
+            searchResult.appendChild(li);
+        });
+
+    }else{
+        searchBox.classList.add('active');
+        searchResult.innerHTML = '<li>검색 결과가 없습니다.</li>';
+    }
+}

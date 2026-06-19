@@ -68,7 +68,7 @@ header{
     padding-bottom: 10px;
 }
 
-#upload_text input{
+#upload_text input{restaurant
     width: 100%;
     font-size: 1.3rem;
     border: 3px solid #dddddd;
@@ -86,14 +86,14 @@ header{
     margin-bottom: 30px;
 }
 
-#restaurant_search{
+#search_input_box{
     display: flex;
     align-items: center;
     gap: 20px;
     margin-bottom: 20px;
 }
 
-#restaurant_search input{
+#search_input_box input{
     flex: 1;
     height: 50px;
     font-size: 1.3rem;
@@ -104,7 +104,7 @@ header{
     box-sizing: border-box;
 }
 
-#restaurant_search button{
+#search_input_box button{
     width: 120px;
     height: 50px;
     margin-bottom: 10px;
@@ -116,6 +116,46 @@ header{
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
+}
+
+#search_result{
+    display: none;
+    list-style: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 2px 1px 10px #dddddd;
+    max-height: 300px;
+    overflow-y: auto;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+#search_bar.active #search_result{
+    display: block;
+}
+
+#search_result li{
+    padding: 12px 10px;
+    border-bottom: 1px solid #eeeeee;
+    cursor: pointer;
+}
+
+#search_result li:first-child:hover{
+    border-radius: 12px 12px 0 0;
+}
+
+#search_result li:last-child:hover{
+    border-radius: 0 0 12px 12px;
+}
+
+#search_result li:last-child{
+    border-bottom: none;
+}
+
+#search_result li:hover{
+    background-color: #fff4cc;
 }
 
 #upload_comment p{
@@ -148,4 +188,5 @@ header{
     font-weight: bold;
     border: none;
     border-radius: 15px;
+    cursor: pointer;
 }
